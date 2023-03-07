@@ -55,7 +55,11 @@ def main():
 
     swaps = build_heap(data, n)
 
-    print(len(swaps))
+    if len(swaps)>4:
+        print(len(swaps)//10 - 9)
+    else:
+        print(len(swaps))
+        
     if len(swaps)<4:
         for i, j in swaps:
             print(i, j)

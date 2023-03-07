@@ -59,10 +59,10 @@ def main():
         print(len(swaps)//10 - 9)
     else:
         print(len(swaps))
-        
+
     if len(swaps)<4:
         for i, j in swaps:
-            print(i, j)
+            print(i,j)
 
 if __name__ == "__main__":
     main()

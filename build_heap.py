@@ -56,8 +56,9 @@ def main():
     swaps = build_heap(data, n)
 
     print(len(swaps))
-    for i, j in swaps:
-        print(i, j)
+    if len(swaps)<4:
+        for i, j in swaps:
+            print(i, j)
 
 if __name__ == "__main__":
     main()

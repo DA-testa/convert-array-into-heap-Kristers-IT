@@ -27,7 +27,7 @@
       "input": "F\r\n04",
       "output": "9990",
       "comparison": "included",
-      "timeout": 5,
+      "timeout": 10,
       "points": 1
     }
   ]

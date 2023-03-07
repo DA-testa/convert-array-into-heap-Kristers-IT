@@ -49,7 +49,7 @@ def main():
         
     elif text.startswith('F'):
         nosaukums = input("Ievadi faila nosaukumu: ") 
-        fails = open("./test/" + nosaukums, "r")
+        fails = open("./tests/" + nosaukums, "r")
         n = int(fails.readline())
         data = np.asarray(list(map(int,fails.readline().split())))
     

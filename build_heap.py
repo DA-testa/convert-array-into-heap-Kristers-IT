@@ -1,5 +1,4 @@
 # python3
-import numpy as numpy
 
 def build_heap(data,n):
     swaps = []
@@ -50,7 +49,7 @@ def main():
         nosaukums = input("Ievadi faila nosaukumu: ") 
         fails = open("./tests/" + nosaukums, "r")
         n = int(fails.readline())
-        data = numpy.asarray(list(map(int,fails.readline().split())))
+        data = list(map(int,fails.readline().split()))
     
     assert len(data) == n
 

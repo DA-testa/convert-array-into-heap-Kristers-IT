@@ -1,42 +1,66 @@
 # python3
 
+import math
 
-def build_heap(data):
+def build_heap(n,data):
     swaps = []
-    # TODO: Creat heap and heap sort
-    # try to achieve  O(n) and not O(n2)
+    n = n-1
+    for indekss in range(n, 0, -1):
+        berns = indekss
+        vecaks = math.floor((indekss-1)/2)
+        for indekss in range (n):
+            if vecaks >= 0 and data[berns] < data[vecaks]:
+                vertiba = data[berns]
+                data[berns] = data[vecaks]
+                data[vecaks] = vertiba
+                swaps.append((vecaks, berns))
+            else:
+                break
+            
+            berns = vecaks 
+            vecaks = math.floor((berns-1)/2)
 
+           # while  i < n / 2:
+               # j = i
+
+               # if 2*i+1 < n and data[2*i+1] < data[j]:
+                   # j = 2*i+1
+
+               # if 2*i+2 < n and data[2*i+2] < data[j]:
+                   # j = 2*i+2
+                
+               # if j != i:
+                   # swaps.append((j, i))
+                   # data[i], data[j] = data[j], data[i]
+                   # i = j
+
+               # else:
+                   # break
 
     return swaps
 
-
 def main():
     
-    # TODO : add input and corresponding checks
-    # add another input for I or F 
-    # first two tests are from keyboard, third test is from a file
+    text = input("Režīms:")
 
-
-    # input from keyboard
-    n = int(input())
-    data = list(map(int, input().split()))
-
-    # checks if lenght of data is the same as the said lenght
+    if text.startswith('I'):
+        n = int(input())
+        data = list(map(int, input().split()))
+        
+    elif text.startswith('F'):
+        nosaukums = input("Faila nosaukumu: ") 
+        fails = open("./tests/" + nosaukums, "r")
+        n = int(fails.readline())
+        data = list(map(int,fails.readline().split()))
+    
     assert len(data) == n
+    swaps = build_heap(n,data)
 
-    # calls function to assess the data 
-    # and give back all swaps
-    swaps = build_heap(data)
-
-    # TODO: output how many swaps were made, 
-    # this number should be less than 4n (less than 4*len(data))
-
-
-    # output all swaps
+    
     print(len(swaps))
     for i, j in swaps:
-        print(i, j)
-
+        print(i,j)
 
 if __name__ == "__main__":
     main()
+
